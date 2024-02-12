@@ -21,6 +21,8 @@ requirements:
     - pip
   run:
     - python >=3.8
+    - geopandas 
+    - jupyterlab
     - scikit-image
     - earthengine-api >=0.1.304
     - matplotlib-base
