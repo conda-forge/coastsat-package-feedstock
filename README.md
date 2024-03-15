@@ -3,7 +3,7 @@ About coastsat-package-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/coastsat-package-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/kvos/CoastSat
+Home: https://github.com/2320sharon/coastsat_package
 
 Package license: GPL-3.0-or-later
 
@@ -143,5 +143,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@2320sharon](https://github.com/2320sharon/)
 * [@ocefpaf](https://github.com/ocefpaf/)
 
