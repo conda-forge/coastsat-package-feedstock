@@ -1,5 +1,5 @@
 {% set name = "coastsat-package" %}
-{% set version = "0.1.64" %}
+{% set version = "0.1.65" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/coastsat_package-{{ version }}.tar.gz
-  sha256: 4f7de2a3d036671b616005f20d58de71293e2ab8c1172ace40582c1f5dc6a3b0
+  sha256: b37f0800898b60f031ba5dc4c387dc76e7c897a491686e1eacd32c58e9d1e535
 
 build:
   noarch: python
@@ -20,7 +20,6 @@ requirements:
     - setuptools >=61.0
     - pip
   run:
-    - imageio
     - python >=3.8
     - scikit-image
     - earthengine-api >=0.1.304
@@ -33,6 +32,7 @@ requirements:
     - pyqt
     - scipy
     - numpy
+    - imageio
 
 test:
   imports:
@@ -43,9 +43,9 @@ test:
     - pip
 
 about:
-  home: https://github.com/2320sharon/coastsat_package
+  home: https://github.com/SatelliteShorelines/coastsat_package
   summary: A Global shoreline mapping tool from satellite imagery
-  license: GPL-3.0-or-later
+  license: GPL-2.0-or-later
   license_file: LICENSE.md
 
 extra:
