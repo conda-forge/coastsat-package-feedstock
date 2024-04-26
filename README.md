@@ -3,9 +3,9 @@ About coastsat-package-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/coastsat-package-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/2320sharon/coastsat_package
+Home: https://github.com/SatelliteShorelines/coastsat_package
 
-Package license: GPL-3.0-or-later
+Package license: GPL-2.0-or-later
 
 Summary: A Global shoreline mapping tool from satellite imagery
 
