@@ -1,5 +1,5 @@
 {% set name = "coastsat-package" %}
-{% set version = "0.1.66" %}
+{% set version = "0.1.67" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/coastsat_package-{{ version }}.tar.gz
-  sha256: a7b2d7638f1be9dafa8a8ba7610f897d690ffff1f0fcd7090b6beeb995e40d7a
+  sha256: fbcc0f3e9fbbe5a6576dcf86fc0ce8a6ad74ff35f2ca39b64f967126f60dd61f
 
 build:
   noarch: python
@@ -20,6 +20,7 @@ requirements:
     - setuptools >=61.0
     - pip
   run:
+    - scikit-learn
     - python >=3.8
     - scikit-image
     - earthengine-api >=0.1.304
