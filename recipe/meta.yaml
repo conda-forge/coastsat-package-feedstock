@@ -1,5 +1,5 @@
 {% set name = "coastsat-package" %}
-{% set version = "0.3.3" %}
+{% set version = "0.3.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/coastsat_package-{{ version }}.tar.gz
-  sha256: df3e8d090b28ccf8ae04bb2af69673504ea04e83d389b84426391cb225564d9e
+  sha256: bef4bb6101f527cc3a76b85e8988f58eec077f691d2421c46717b288261ba6a4
 
 build:
   noarch: python
