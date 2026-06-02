@@ -20,7 +20,7 @@ requirements:
     - setuptools >=61.0
     - pip
   run:
-    - astropy
+    - astropy-base
     - python >={{ python_min }}
     - scikit-learn
     - scikit-image
