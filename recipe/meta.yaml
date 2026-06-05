@@ -1,5 +1,5 @@
 {% set name = "coastsat-package" %}
-{% set version = "0.4.7" %}
+{% set version = "0.4.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/coastsat_package-{{ version }}.tar.gz
-  sha256: d2833016171c36547dda12b0c16fabf75e1f9b5fdfbe2a6a2656474ed069a98c
+  sha256: ef0a0d0319bb388ac54a0351a6c847f0c0d4fceea9138d91b7765ddd5f3ddccb
 
 build:
   noarch: python
@@ -20,6 +20,7 @@ requirements:
     - setuptools >=61.0
     - pip
   run:
+    - astropy
     - astropy-base
     - python >={{ python_min }}
     - scikit-learn
