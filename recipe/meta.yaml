@@ -1,5 +1,5 @@
 {% set name = "coastsat-package" %}
-{% set version = "0.4.8" %}
+{% set version = "0.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/coastsat_package-{{ version }}.tar.gz
-  sha256: ef0a0d0319bb388ac54a0351a6c847f0c0d4fceea9138d91b7765ddd5f3ddccb
+  sha256: 6ca89e8d2db119c71d3b5bde9307957cb584f2924ac99a46975659595a78dd93
 
 build:
   noarch: python
@@ -20,11 +20,20 @@ requirements:
     - setuptools >=61.0
     - pip
   run:
+    - google-auth
+    - joblib
+    - onnxruntime
+    - pandas
+    - pillow
+    - pooch
+    - pytz
+    - requests
+    - shapely
     - astropy
     - astropy-base
     - python >={{ python_min }}
     - scikit-learn
-    - scikit-image
+    - scikit-image >=0.25
     - earthengine-api >=0.1.304
     - jupyterlab >=3.0.0
     - geopandas
@@ -34,7 +43,7 @@ requirements:
     - importlib-resources
     - pyqt
     - scipy
-    - numpy
+    - numpy >=2
     - imageio
 
 test:
