@@ -1,0 +1,79 @@
+schema_version: 1
+
+context:
+  name: coastsat-package
+  version: "0.5.0"
+
+package:
+  name: ${{ name }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/coastsat_package-${{ version }}.tar.gz
+  sha256: 6ca89e8d2db119c71d3b5bde9307957cb584f2924ac99a46975659595a78dd93
+
+build:
+  noarch: python
+  number: 1
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools >=77.0
+    - pip
+    - wheel
+
+  run:
+    - python >=${{ python_min }}
+    - astropy-base
+    - earthengine-api >=0.1.304
+    - gdal  # required by direct osgeo imports; intentionally omitted from upstream PyPI dependencies
+    - geopandas
+    - google-auth
+    - imageio
+    - importlib-resources
+    - joblib
+    - matplotlib-base
+    - numpy >=2
+    - onnxruntime
+    - pandas
+    - pillow
+    - pooch
+    - pyqt
+    - pytz
+    - requests
+    - scikit-image >=0.25
+    - scikit-learn
+    - scipy
+    - shapely
+    - tqdm
+
+tests:
+  - python:
+      imports:
+        - coastsat
+        - coastsat.SDS_download
+        - coastsat.SDS_preprocess
+        - coastsat.SDS_sar_model
+        - coastsat.SDS_shoreline
+        - coastsat.SDS_tools
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+
+about:
+  homepage: https://github.com/SatelliteShorelines/coastsat_package
+  summary: CoastSat package extension optimized and maintained for CoastSeg
+  description: |
+    A Python package providing an extension of CoastSat, modified for seamless 
+    compatibility and integration with the CoastSeg toolbox. Actively maintained 
+    by the CoastSeg team.
+  license: GPL-3.0-only
+  license_file: LICENSE.md
+
+extra:
+  recipe-maintainers:
+    - 2320sharon
+    - ocefpaf
