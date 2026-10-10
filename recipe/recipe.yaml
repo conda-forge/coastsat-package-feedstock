@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: coastsat-package
-  version: "0.5.0"
+  version: 0.5.1
 
 package:
   name: ${{ name }}
@@ -10,11 +10,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/coastsat_package-${{ version }}.tar.gz
-  sha256: 6ca89e8d2db119c71d3b5bde9307957cb584f2924ac99a46975659595a78dd93
+  sha256: 9e8e9fcce982700f7629af9187b5b4dcb5d26c47ea54b95df19e61f05cea8384
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
@@ -26,13 +26,10 @@ requirements:
 
   run:
     - python >=${{ python_min }}
-    - astropy-base
     - earthengine-api >=0.1.304
-    - gdal  # required by direct osgeo imports; intentionally omitted from upstream PyPI dependencies
     - geopandas
     - google-auth
     - imageio
-    - importlib-resources
     - joblib
     - matplotlib-base
     - numpy >=2
@@ -48,7 +45,7 @@ requirements:
     - scipy
     - shapely
     - tqdm
-
+    - astropy
 tests:
   - python:
       imports:
@@ -61,7 +58,7 @@ tests:
       pip_check: true
       python_version:
         - ${{ python_min }}.*
-        - "*"
+        - '*'
 
 about:
   homepage: https://github.com/SatelliteShorelines/coastsat_package
