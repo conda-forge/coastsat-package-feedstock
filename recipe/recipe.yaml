@@ -22,8 +22,6 @@ requirements:
     - python ${{ python_min }}.*
     - setuptools >=77.0
     - pip
-    - wheel
-
   run:
     - python >=${{ python_min }}
     - earthengine-api >=0.1.304
@@ -46,6 +44,8 @@ requirements:
     - shapely
     - tqdm
     - astropy
+    - gdal
+
 tests:
   - python:
       imports:
