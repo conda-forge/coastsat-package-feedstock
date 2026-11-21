@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: coastsat-package
-  version: 0.5.1
+  version: 0.5.2
 
 package:
   name: ${{ name }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/coastsat_package-${{ version }}.tar.gz
-  sha256: 9e8e9fcce982700f7629af9187b5b4dcb5d26c47ea54b95df19e61f05cea8384
+  sha256: 38a98455db36804af2ede84670c548e9a21fd2be8be5dc541d5c97bd785f349a
 
 build:
   noarch: python
@@ -44,8 +44,6 @@ requirements:
     - shapely
     - tqdm
     - astropy
-    - gdal
-
 tests:
   - python:
       imports:
